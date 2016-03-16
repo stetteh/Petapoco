@@ -12,16 +12,25 @@ namespace Petapoco
         {
             var db = new PetaPoco.Database("dbstring");
 
-            //
-            SalesPeople newSalesPeople = new SalesPeople();
-            SalesPeople newSalesPeople2 = new SalesPeople();
+            //SalesPeople newSalesPeople2 = new SalesPeople();
+            //db.Insert(newSalesPeople);
 
-            newSalesPeople.Name = "Seth Quaye";
-            newSalesPeople2.Name = "Deacon";
+            List<SalesPeople> salesperson = new List<SalesPeople>();
+            salesperson.Add(new SalesPeople("Deacon"));
+            salesperson.Add(new SalesPeople("Edan"));
+            salesperson.Add(new SalesPeople("Yardley"));
+            salesperson.Add(new SalesPeople("Farrah"));
+            salesperson.Add(new SalesPeople("Jessamine"));
+            salesperson.Add(new SalesPeople("Isabelle"));
+            salesperson.Add(new SalesPeople("Judah"));
 
-            db.Insert(newSalesPeople);
-            db.Insert(newSalesPeople2);
-            //Assert.True(newSalesPeople.PeopleId != 0);
+            foreach (var sp in salesperson)
+            {
+                db.Insert(sp);
+            }
+
+            
+          
 
         }
     }

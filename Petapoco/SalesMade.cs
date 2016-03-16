@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetaPoco;
 
 namespace Petapoco
 {
+    [TableName("SalesMade")]
+    [PrimaryKey("SalesId")]
     public class SalesMade
     {
         public int SalesId { get; set; }

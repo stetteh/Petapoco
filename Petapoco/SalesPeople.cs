@@ -11,6 +11,12 @@ namespace Petapoco
     [PrimaryKey("PeopleId")]
     public class SalesPeople
     {
+        
+        public SalesPeople(string name)
+        {
+            this.Name = name;
+        }
+
         public int PeopleId { get; set; }
         public string Name { set; get; }
     }
