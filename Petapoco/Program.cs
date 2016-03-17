@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,11 +48,21 @@ namespace Petapoco
                 db.Insert(sm);
             }
 
-            var a = db.SingleOrDefault<SalesPeople>("SELECT * FROM SalesPeople");
+           // var a = db.SingleOrDefault<SalesPeople>("SELECT * FROM SalesPeople");
+            //var a = db.SingleOrDefault<SalesPeople>("WHERE PeopleId=@0", 123);
+           
+
+            foreach (var s in db.Query<SalesPeople>("select * from sales"))
+            {
+                Console.WriteLine(s);
+            }
+           // var s = db.Query<SalesPeople>("select * from sales");
+
+
 
             //var getAllCutomers = dotnet.Query<Customer>("SELECT * FROM Customers");
 
-            Console.WriteLine(a);
+            //Console.WriteLine(s);
 
             Console.ReadLine();
 
