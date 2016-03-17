@@ -29,8 +29,36 @@ namespace Petapoco
                 db.Insert(sp);
             }
 
-            
-          
+            List<SalesMade> salesmade = new List<SalesMade>()
+            {
+                new SalesMade("Deacon", new DateTime(2015, 10, 15), 8852),
+                new SalesMade("Edan", new DateTime(2015, 12, 07), 5255),
+                new SalesMade("Deacon", new DateTime(2016, 02, 27), 5259),
+                new SalesMade("Yardley", new DateTime(2015, 11, 23), 7244),
+                new SalesMade("Farrah", new DateTime(2015, 12, 21), 8711),
+                new SalesMade("Deacon", new DateTime(2015, 10, 02), 740),
+                new SalesMade("Jessamine", new DateTime(2015, 04, 02), 9970),
+                new SalesMade("Isabelle", new DateTime(2015, 12, 25), 6009),
+                new SalesMade("Judah", new DateTime(2014, 07, 03), 9703)
+            };
+
+            foreach (var sm in salesmade)
+            {
+                db.Insert(sm);
+            }
+
+            var a = db.SingleOrDefault<SalesPeople>("SELECT * FROM SalesPeople");
+
+            //var getAllCutomers = dotnet.Query<Customer>("SELECT * FROM Customers");
+
+            Console.WriteLine(a);
+
+            Console.ReadLine();
+
+
+
+
+
 
         }
     }

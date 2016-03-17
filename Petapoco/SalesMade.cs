@@ -11,6 +11,13 @@ namespace Petapoco
     [PrimaryKey("SalesId")]
     public class SalesMade
     {
+        public SalesMade(string name, DateTime dateTime, int pretax)
+        {
+            this.Name = name;
+            this.SalesDate = dateTime;
+            this.PreTaxAmount = pretax;
+        }
+
         public int SalesId { get; set; }
         public string Name { get; set; }
         public DateTime SalesDate { get; set; }
