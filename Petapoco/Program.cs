@@ -52,19 +52,27 @@ namespace Petapoco
             //var a = db.SingleOrDefault<SalesPeople>("WHERE PeopleId=@0", 123);
            
 
-            foreach (var s in db.Query<SalesPeople>("select * from sales"))
+            foreach (var s in db.Query<SalesPeople>("select * from SalesPerson"))
             {
                 Console.WriteLine(s);
             }
-           // var s = db.Query<SalesPeople>("select * from sales");
+            foreach (var smin in db.Query<SalesMade>("Select min(PreTaxAmount) SalesMade"))
+            {
+                Console.WriteLine(smin.PreTaxAmount);
+            }
+            foreach (var smax in db.Query<SalesMade>("Select min(PreTaxAmount) SalesMade"))
+            {
+                Console.WriteLine(smax.PreTaxAmount);
+            }
+            // var s = db.Query<SalesPeople>("select * from sales");
 
 
 
-            //var getAllCutomers = dotnet.Query<Customer>("SELECT * FROM Customers");
+                //var getAllCutomers = dotnet.Query<Customer>("SELECT * FROM Customers");
 
-            //Console.WriteLine(s);
+                //Console.WriteLine(s);
 
-            Console.ReadLine();
+                Console.ReadLine();
 
 
 
