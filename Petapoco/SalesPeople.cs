@@ -8,7 +8,7 @@ using PetaPoco;
 namespace Petapoco
 {
     [TableName("SalesPeople")]
-    [PrimaryKey("PeopleId")]
+    [PrimaryKey("Id")]
     public class SalesPeople
     {
         
@@ -17,7 +17,7 @@ namespace Petapoco
             this.Name = name;
         }
 
-        public int PeopleId { get; set; }
+        public int Id { get; set; }
         public string Name { set; get; }
     }
 }

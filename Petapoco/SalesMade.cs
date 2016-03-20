@@ -8,7 +8,7 @@ using PetaPoco;
 namespace Petapoco
 {
     [TableName("SalesMade")]
-    [PrimaryKey("SalesId")]
+    [PrimaryKey("Id")]
     public class SalesMade
     {
         public SalesMade(string name, DateTime dateTime, int pretax)
@@ -18,7 +18,7 @@ namespace Petapoco
             this.PreTaxAmount = pretax;
         }
 
-        public int SalesId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime SalesDate { get; set; }
         public int PreTaxAmount { get; set; }

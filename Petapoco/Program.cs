@@ -48,13 +48,17 @@ namespace Petapoco
                 db.Insert(sm);
             }
 
-           // var a = db.SingleOrDefault<SalesPeople>("SELECT * FROM SalesPeople");
+            // var a = db.SingleOrDefault<SalesPeople>("SELECT * FROM SalesPeople");
             //var a = db.SingleOrDefault<SalesPeople>("WHERE PeopleId=@0", 123);
-           
 
-            foreach (var s in db.Query<SalesPeople>("select * from SalesPerson"))
+
+            foreach (var s in db.Query<SalesPeople>("select * from SalesPeople"))
             {
-                Console.WriteLine(s);
+                Console.WriteLine($"Sales Person Name is {s.Name}");
+            }
+            foreach (var s in db.Query<SalesMade>("select * from SalesMade"))
+            {
+                Console.WriteLine($"{s.Name} made a sale on {s.SalesDate.ToShortDateString()} and pretax amount is {s.PreTaxAmount}");
             }
             foreach (var smin in db.Query<SalesMade>("Select min(PreTaxAmount) SalesMade"))
             {
@@ -68,11 +72,11 @@ namespace Petapoco
 
 
 
-                //var getAllCutomers = dotnet.Query<Customer>("SELECT * FROM Customers");
+            //var getAllCutomers = dotnet.Query<Customer>("SELECT * FROM Customers");
 
-                //Console.WriteLine(s);
+            //Console.WriteLine(s);
 
-                Console.ReadLine();
+            Console.ReadLine();
 
 
 
