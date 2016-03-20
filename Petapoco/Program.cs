@@ -68,13 +68,12 @@ namespace Petapoco
             {
                 Console.WriteLine(smax.PreTaxAmount);
             }
-            // var s = db.Query<SalesPeople>("select * from sales");
 
+            foreach (var d in db.Query<SalesMade> ("select datediff(day, min(SalesDate), max(SalesDate) from SalesMade"))
+            {
+                Console.WriteLine(d);
+            }
 
-
-            //var getAllCutomers = dotnet.Query<Customer>("SELECT * FROM Customers");
-
-            //Console.WriteLine(s);
 
             Console.ReadLine();
 
